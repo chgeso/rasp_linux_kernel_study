@@ -2,7 +2,7 @@
 
 echo "configure build output path"
 
-KERNEL_TOP_PATH="$( cd "$(dirname "$0")" ; pwd -P )"
+KERNEL_TOP_PATH="../"
 OUTPUT="$KERNEL_TOP_PATH/out"
 echo "$OUTPUT"
 
@@ -10,7 +10,7 @@ KERNEL=kernel7l
 BUILD_LOG="$KERNEL_TOP_PATH/rpi_build_log.txt"
 
 echo "move kernel source"
-cd linux
+cd ../rasp_linux_kernel_4.19
 
 echo "make defconfig"
 make O=$OUTPUT ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- bcm2711_defconfig

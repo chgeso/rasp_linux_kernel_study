@@ -2,18 +2,18 @@
 
 echo "mount sdk filesystem"
 
-#mkdir mnt
-#mkdir mnt/fat32
-#mkdir mnt/ext4
-sudo mount /dev/sdd1 mnt/fat32
-sudo mount /dev/sdd2 mnt/ext4
+#mkdir ../mnt
+#mkdir ../mnt/fat32
+#mkdir ../mnt/ext4
+sudo mount /dev/sdd1 ../mnt/fat32
+sudo mount /dev/sdd2 ../mnt/ext4
 
 KERNEL=kernel7l
-KERNEL_TOP_PATH="$( cd "$(dirname "$0")" ; pwd -P)"
+KERNEL_TOP_PATH="../"
 OUTPUT="$KERNEL_TOP_PATH/out"
 MNT="$KERNEL_TOP_PATH/mnt"
 
-cd linux
+cd ../rasp_linux_kernel_4.19
 
 sudo make O=$OUTPUT ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- INSTALL_MOD_PATH=$MNT/ext4 modules_install
 

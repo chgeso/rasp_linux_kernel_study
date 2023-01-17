@@ -11,5 +11,10 @@ $ git clone --depth=1 --branch rpi-4.19.y https://github.com/raspberrypi/linux
 $ sudo apt install git bc bison flex libssl-dev make libc6-dev libncurses5-dev
 $ sudo apt install crossbuild-essential-armhf
 
+When you uses 64bits please install below things.
+$ sudo apt install git bc bison flex libssl-dev make libc6-dev libncurses5-dev
+$ sudo apt install crossbuild-essential-arm64
+
+
 To kernel build, run `01_cross-build.sh`.
 To kernel install, run `02_install_sdk.sh`.
